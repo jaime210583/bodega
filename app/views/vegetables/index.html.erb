@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Verduras Orgánicas</h1>
+
+<table class="imagetable">
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Descripcion</th>
+      <th>Precio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vegetables.each do |vegetable| %>
+      <tr>
+        <td><%= vegetable.tipo %></td>
+        <td><%= vegetable.descripcion %></td>
+        <td><%= vegetable.precio %></td>
+        <td><%= link_to 'Ver', vegetable %></td>
+        <td><%= link_to 'Editar', edit_vegetable_path(vegetable) %></td>
+        <td><%= link_to 'Eliminar', vegetable, method: :delete, data: { confirm: 'Seguro desea eliminar?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Agregar verduras', new_vegetable_path %>

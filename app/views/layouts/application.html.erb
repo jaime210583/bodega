@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bodega Orgánica</title>
+
+ <!--BOOTSTRAP THEME AGREGADO-->
+
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <%= stylesheet_link_tag    'estilo_foot_head', media: 'all', 'data-turbolinks-track' => true %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
+  <%= csrf_meta_tags %>
+
+
+<style>  </style>
+
+
+
+
+
+</head>
+<body>
+
+
+
+
+
+  <% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+
+
+
+
+
+
+<p class="colorBox"> <%= image_tag "bodega_or.png", size: "105x85"%> Bodega Orgánica
+
+<!--Menú general -->
+<div class="bs-example">
+
+<!--Usuario en sesión -->
+<p class="navbar-text pull-right">
+  <% if user_signed_in? %>
+    En sesión: <strong><%= current_user.email %></strong>.
+    <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+    <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <% else %>
+    <%= link_to "registraté", new_user_registration_path, :class => 'navbar-link'  %> |
+    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+  <% end %>
+<!--Usuario en sesión -->
+
+
+    <ul class="nav nav-tabs">
+        <li class="active"><li><%= link_to 'Home' , root_path %></li></li>
+        <li><li><%= link_to 'Venta' , sales_path %></li></li>
+        <li><li><%= link_to 'Inscripciones' , inscriptions_path %></li></li>
+        <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Catálogos <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><%= link_to 'Frutas' , fruits_path %> </li>
+                <li><%= link_to 'Verduras' , vegetables_path %></li>
+                <li><%= link_to 'Lacteos' , dairies_path %></li>
+                <li><%= link_to 'Pan' , breads_path %></li>
+                <li><%= link_to 'Botanas' , snacks_path %></li>
+                <li><%= link_to 'Hierbas' , herbs_path %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'Otros Productos' , products_path %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'Curso Energías Renovables' , energies_path %></li>
+                <li><%= link_to 'Curso Artesanías' , crafts_path %></li>
+                <li><%= link_to 'Curso Cocina Orgánica' , kitchens_path %></li>
+                <li><%= link_to 'Información de Curso' , download_index_path %></li>                
+            </ul>
+
+        </li>
+        
+    </ul>    
+</div>
+
+
+</p>
+
+
+
+
+
+  <%= yield %>
+
+
+       
+      
+   <footer>
+        <div class='define'>
+            <p>Proyecto LPOO - Junio 2015</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

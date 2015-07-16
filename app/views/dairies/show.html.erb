@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @dairy.tipo %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @dairy.descripcion %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @dairy.precio %>
+</p>
+
+<%= link_to 'Edit', edit_dairy_path(@dairy) %> |
+<%= link_to 'Back', dairies_path %>

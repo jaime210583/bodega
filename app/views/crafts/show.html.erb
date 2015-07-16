@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<table class="imagetable">
+    <thead>
+       <tr>
+          <th>Venta Realizada</th>
+      </tr>   
+    </thead>
+     <tbody>
+     <tr>
+     <td>
+<p>
+  <strong>Fecha:</strong>
+  <%= @craft.fecha %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @craft.descripcion %>
+</p>
+
+<p>
+  <strong>Costo:</strong>
+  <%= @craft.costo %>
+</p>
+
+<p>
+  <strong>Materiales:</strong>
+  <%= @craft.materiales %>
+</p>
+
+<%= link_to 'Editar', edit_craft_path(@craft) %> |
+<%= link_to 'Atras', crafts_path %>
+
+
+      </td>
+     </tr>
+   </tbody>
+ </table>

@@ -1,0 +1,69 @@
+<%= form_for(@vegetable) do |f| %>
+  <% if @vegetable.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vegetable.errors.count, "error") %> prohibited this vegetable from being saved:</h2>
+
+      <ul>
+      <% @vegetable.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ 
+    <script type="text/javascript">
+      function validar(){
+        //var ok = true;
+        var msg = "No puede quedar un campo vacio!\n";
+        var nombre=document.getElementById('txtField').value;
+        if(nombre==''){
+          alert(msg);          
+          //msg += "¡¡¡¡\n";
+          //ok = false;
+
+          }else{
+          return 0;
+          }
+        }
+        
+   </script> 
+
+
+
+
+  <table class="imagetable">
+    <thead>
+      <th>Verduras</th>      
+    </thead>
+   <tbody>
+    <tr>
+          <td> 
+
+
+  <div class="field">
+    <%= f.label :tipo%><br>
+    <%= f.text_field :tipo ,{ :id => "txtField" } %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion %><br>
+    <%= f.text_field :descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :precio %><br>
+    <%= f.text_field :precio %>
+  </div>
+  <div class="actions">
+  
+    <%= f.submit 'Agregar verduras'%>
+     
+    <%= f.submit'Agregar', class: 'buttons', :onclick => 'validar()' %>
+  </div>
+
+</td>
+          <br><br><br>  
+    </tbody>
+ </table>
+
+  
+<% end %>

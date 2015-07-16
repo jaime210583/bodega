@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<table class="imagetable">
+    <thead>
+       <tr>
+          <th>Botana Agregada</th>
+      </tr>   
+    </thead>
+     <tbody>
+     <tr>
+     <td>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @snack.tipo %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @snack.descripcion %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @snack.precio %>
+</p>
+
+<%= link_to 'Editar', edit_snack_path(@snack) %> |
+<%= link_to 'Atras', snacks_path %>
+
+
+      </td>
+     </tr>
+   </tbody>
+ </table>

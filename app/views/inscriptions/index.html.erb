@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Inscripciones a cursos</h1>
+
+<table class="imagetable">
+  <thead>
+    <tr>
+      <th>Nombre cliente&nbsp;&nbsp;</th>
+      <th>Curso&nbsp;&nbsp;</th>
+      <th>Fecha&nbsp;&nbsp;</th>
+      <th>Nota&nbsp;&nbsp;</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inscriptions.each do |inscription| %>
+      <tr>
+        <td><%= inscription.nombre_cliente %>&nbsp;&nbsp;</td>
+        <td><%= inscription.activity.energy.descripcion %>&nbsp;&nbsp;</td>
+        <td><%= inscription.fecha %>&nbsp;&nbsp;</td>
+        <td><%= inscription.nota %>&nbsp;&nbsp;</td>         
+        
+        <td>
+          <div class="btn-group" data-toggle="buttons">
+           <label class="btn btn-info">
+              <input type="radio" name="options"> <%= link_to 'Ver', inscription %>&nbsp;
+           </label>
+        </td>
+
+        <td>
+          <div class="btn-group" data-toggle="buttons">
+           <label class="btn btn-warning">
+              <input type="radio" name="options"> <%= link_to 'Editar', edit_inscription_path(inscription) %>&nbsp;
+           </label>
+        </td>
+        
+        <td>
+          <div class="btn-group" data-toggle="buttons">
+           <label class="btn btn-danger">
+              <input type="radio" name="options"> <%= link_to 'Eliminar', inscription, method: :delete, data: { confirm: 'Are you sure?' } %>&nbsp;
+           </label>
+        </td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+&nbsp;&nbsp;<%= link_to 'Nueva Inscripción', new_inscription_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre_cliente: MyString
+  activity_id: 
+  fecha: 2015-06-25
+  nota: MyString
+
+two:
+  nombre_cliente: MyString
+  activity_id: 
+  fecha: 2015-06-25
+  nota: MyString

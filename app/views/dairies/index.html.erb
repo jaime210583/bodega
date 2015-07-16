@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lacteos</h1>
+
+<table class="imagetable">
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Descripcion</th>
+      <th>Precio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dairies.each do |dairy| %>
+      <tr>
+        <td><%= dairy.tipo %></td>
+        <td><%= dairy.descripcion %></td>
+        <td><%= dairy.precio %></td>
+        <td><%= link_to 'Ver', dairy %></td>
+        <td><%= link_to 'Editar', edit_dairy_path(dairy) %></td>
+        <td><%= link_to 'Eliminar', dairy, method: :delete, data: { confirm: 'Seguro que desea eliminar?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Agregar Lacteo', new_dairy_path %>

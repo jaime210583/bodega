@@ -1,0 +1,99 @@
+<p id="notice"><%= notice %></p>
+
+
+ <table class="imagetable">
+    <thead>
+       <tr>
+          <th>Verduras</th>
+      </tr>   
+    </thead>
+     <tbody>
+     <tr>
+     <td>
+<p>
+  <strong>Fecha de venta:</strong>
+  <%= @sale.fecha %>
+</p>
+
+
+<p>
+  <strong>Fruit:</strong>
+  <%= @sale.fruit.tipo  %>
+</p>
+<p>
+  <strong>Vegetable:</strong>
+  <%= @sale.vegetable.tipo %>
+</p>
+
+<p>
+  <strong>Bread:</strong>
+  <%= @sale.bread.tipo%>
+</p>
+
+<p>
+  <strong>Snack:</strong>
+  <%= @sale.snack.tipo %>
+</p>
+
+<p>
+  <strong>Dairy:</strong>
+  <%= @sale.dairy.tipo %>
+</p>
+
+<p>
+  <strong>Herb:</strong>
+  <%= @sale.herb.tipo %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @sale.product.tipo %>
+</p>
+
+<p>
+  <strong>Venta fruta:</strong>
+  <%= @sale.venta_fruta %>
+</p>
+
+<p>
+  <strong>Venta vegetal:</strong>
+  <%= @sale.venta_vegetal %>
+</p>
+
+<p>
+  <strong>Venta pan:</strong>
+  <%= @sale.venta_pan %>
+</p>
+
+<p>
+  <strong>Venta botana:</strong>
+  <%= @sale.venta_botana %>
+</p>
+
+<p>
+  <strong>Venta lacteo:</strong>
+  <%= @sale.venta_lacteo %>
+</p>
+
+<p>
+  <strong>Venta hierba:</strong>
+  <%= @sale.venta_hierba %>
+</p>
+
+<p>
+  <strong>Venta producto:</strong>
+  <%= @sale.venta_producto %>
+</p>
+
+<p>
+  <strong>Venta total: $</strong>
+  <%= @sale.venta_fruta.to_d +  @sale.venta_vegetal.to_d + @sale.venta_pan.to_d + @sale.venta_botana.to_d + @sale.venta_lacteo.to_d + @sale.venta_hierba.to_d + @sale.venta_producto.to_d %><br></br>
+  <%= link_to 'Actualizar', edit_sale_path(@sale) %> |
+  <%= link_to 'Atras', sales_path %> <br></br> <br></br>
+</p>
+
+
+      </td>
+     </tr>
+   </tbody>
+ </table>

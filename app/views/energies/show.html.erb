@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+ <table class="imagetable">
+    <thead>
+       <tr>
+          <th>Venta Realizada</th>
+      </tr>   
+    </thead>
+     <tbody>
+     <tr>
+     <td>
+<p>
+  <strong>Fecha:</strong>
+  <%= @energy.fecha %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @energy.descripcion %>
+</p>
+
+<p>
+  <strong>Costo:</strong>
+  <%= @energy.costo %>
+</p>
+
+<p>
+  <strong>Materiales:</strong>
+  <%= @energy.materiales %>
+</p>
+
+<%= link_to 'Editar', edit_energy_path(@energy) %> |
+<%= link_to 'Atras', energies_path %>
+
+
+      </td>
+     </tr>
+   </tbody>
+ </table>

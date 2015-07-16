@@ -1,0 +1,33 @@
+<%= form_for(@kitchen) do |f| %>
+  <% if @kitchen.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@kitchen.errors.count, "error") %> prohibited this kitchen from being saved:</h2>
+
+      <ul>
+      <% @kitchen.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fecha %><br>
+    <%= f.date_select :fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion %><br>
+    <%= f.text_field :descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :costo %><br>
+    <%= f.text_field :costo %>
+  </div>
+  <div class="field">
+    <%= f.label :materiales %><br>
+    <%= f.text_field :materiales %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+
+<br></br>
+<h1 align="left">&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;Stock de Frutas</h1>
+
+<br></br>
+<table class="imagetable">
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>&nbsp; &nbsp;&nbsp;Descripcion</th>
+      <th>&nbsp; &nbsp;&nbsp;Precio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fruits.each do |fruit| %>
+      <tr>
+        <td><%= fruit.tipo %></td>
+        <td>&nbsp; &nbsp;&nbsp;<%= fruit.descripcion %></td>
+        <td>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= fruit.precio %></td>
+        <td>&nbsp; &nbsp;&nbsp;&nbsp;<%= link_to 'Ver', fruit %></td>
+        <td> &nbsp; &nbsp;&nbsp;<%= link_to 'Editar', edit_fruit_path(fruit) %></td>
+        <td>&nbsp; &nbsp;&nbsp;<%= link_to 'Eliminar', fruit, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+
+        <td>
+           <div class="btn-group" data-toggle="buttons">
+           <label class="btn btn-primary">
+              <input type="radio" name="options"> <%= link_to 'Agrega Fruta', new_fruit_path %>
+           </label>
+        </td>
+  </tbody>
+  
+</table>
+
+<br>
+
+
+
+
+
+
+
+
+</div>    
+
+

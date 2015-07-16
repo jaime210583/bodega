@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Botánas</h1>
+
+<table class="imagetable">
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Descripcion</th>
+      <th>Precio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @snacks.each do |snack| %>
+      <tr>
+        <td><%= snack.tipo %></td>
+        <td><%= snack.descripcion %></td>
+        <td><%= snack.precio %></td>
+        <td><%= link_to 'Ver', snack %></td>
+        <td><%= link_to 'Editar', edit_snack_path(snack) %></td>
+        <td><%= link_to 'Eliminar', snack, method: :delete, data: { confirm: 'Estas seguro de eliminar?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Agregar Botana', new_snack_path %>

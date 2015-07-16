@@ -1,0 +1,56 @@
+<%= form_for(@sale) do |f| %>
+  <% if @sale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
+
+      <ul>
+      <% @sale.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   
+
+
+  <table class="imagetable">
+    <thead>
+      <th>Productos</th>
+      <th>&nbsp;&nbsp;&nbsp;&nbsp;Precio $ </th>
+    </thead>
+   <tbody>
+    <tr>
+      <td> 
+       <%= f.label :fecha %> &nbsp;&nbsp; <%= f.date_select :fecha %><br><br>  
+      
+        
+         <%= f.label 'fruta' %> &nbsp;&nbsp;
+      
+         <%= f.collection_select :fruit_id, Fruit.all, :id, :tipo, prompt: '-' %> <br><br>  
+        <!--<%= collection_select( :sale, :fruit_id, Fruit.all, :id, :tipo, {}, { :multiple => false }) %><br><br> --> 
+
+          <%= f.label 'verdura' %>&nbsp;&nbsp;<%= f.collection_select :vegetable_id, Vegetable.all, :id, :tipo, prompt:'-'%><br><br>
+          <%= f.label 'pan' %>&nbsp;&nbsp; <%= f.collection_select :bread_id, Bread.all, :id, :tipo, prompt: '-'%><br><br>
+          <%= f.label 'botana' %>&nbsp;&nbsp;<%= f.collection_select :snack_id, Snack.all, :id, :tipo, prompt: '-' %><br><br>
+          <%= f.label 'lacteo' %>&nbsp;&nbsp;<%= f.collection_select :dairy_id, Dairy.all, :id, :tipo, prompt: '-' %><br><br>
+          <%= f.label 'hierbas' %>&nbsp;&nbsp;&nbsp;<%= f.collection_select :herb_id, Herb.all, :id, :tipo, prompt: '-' %><br><br>  
+          <%= f.label 'otro producto' %>&nbsp;<%= f.collection_select :product_id, Product.all, :id, :tipo, prompt: '-' %>   <br><br>   
+      </td>
+      <td>
+          <br><br><br><br><%= f.label :venta_fruta %> <%= f.text_field :venta_fruta %> <br><br>  
+          <%= f.label :venta_vegetal %>&nbsp;&nbsp;<%= f.text_field :venta_vegetal %> <br><br>  
+          <%= f.label :venta_pan %>&nbsp;&nbsp;<%= f.text_field :venta_pan %> <br><br>
+          <%= f.label :venta_botana %>&nbsp;&nbsp;<%= f.text_field :venta_botana %><br><br>
+          <%= f.label :venta_lacteo %>&nbsp;&nbsp;<%= f.text_field :venta_lacteo %><br><br>
+          <%= f.label :venta_hierba %>&nbsp;&nbsp;<%= f.text_field :venta_hierba %><br><br>
+          <%= f.label :venta_producto %>&nbsp;&nbsp;<%= f.text_field :venta_producto%> <br><br> 
+          <div class="actions">
+            <%= f.submit 'concretar venta'%>
+          </div>  
+      </td>
+      
+     </tbody>
+  </table>
+  
+<% end %>

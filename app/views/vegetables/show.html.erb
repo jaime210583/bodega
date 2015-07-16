@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<table class="imagetable">
+    <thead>
+       <tr>
+          <th>Verduras agregadas</th>
+      </tr>   
+    </thead>
+     <tbody>
+     <tr>
+     <td>
+<p>
+  <strong>Tipo:</strong>
+  <%= @vegetable.tipo %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @vegetable.descripcion %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @vegetable.precio %>
+</p>
+
+<%= link_to 'Editar', edit_vegetable_path(@vegetable) %> |
+<%= link_to 'Atras', vegetables_path %>
+</td>
+     </tr>
+   </tbody>
+ </table>

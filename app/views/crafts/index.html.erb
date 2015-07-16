@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Curso Artesanías</h1>
+
+<table class="imagetable">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Descripcion</th>
+      <th>Costo</th>
+      <th>Materiales</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @crafts.each do |craft| %>
+      <tr>
+        <td><%= craft.fecha %></td>
+        <td><%= craft.descripcion %></td>
+        <td><%= craft.costo %></td>
+        <td><%= craft.materiales %></td>
+        <td><%= link_to 'Ver', craft %></td>
+        <td><%= link_to 'Editar', edit_craft_path(craft) %></td>
+        <td><%= link_to 'Eliminar', craft, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo curso', new_craft_path %>

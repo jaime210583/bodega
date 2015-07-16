@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<table class="imagetable">
+    <thead>
+       <tr>
+          <th>Venta Realizada</th>
+      </tr>   
+    </thead>
+     <tbody>
+     <tr>
+     <td>
+<p>
+  <strong>Energy:</strong>
+  <%= @activity.energy_id %>
+</p>
+
+<p>
+  <strong>Kitchen:</strong>
+  <%= @activity.kitchen_id %>
+</p>
+
+<p>
+  <strong>Craft:</strong>
+  <%= @activity.craft_id %>
+</p>
+
+<%= link_to 'Editar', edit_activity_path(@activity) %> |
+<%= link_to 'Atras', activities_path %>
+
+
+      </td>
+     </tr>
+   </tbody>
+ </table>

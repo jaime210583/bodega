@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<table class="imagetable">
+    <thead>
+      <th>Nueva Inscripción</th>      
+    </thead>
+   <tbody>
+    <tr>
+          <td> 
+
+<p>
+  <strong>Nombre cliente:</strong>
+  <%= @inscription.nombre_cliente %>
+</p>
+
+<p>
+  <strong>Curso:</strong>
+  <%= @inscription.activity.energy.descripcion %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @inscription.fecha %>
+</p>
+
+<p>
+  <strong>Nota:</strong>
+  <%= @inscription.nota %>
+</p>
+
+<%= link_to 'Editar', edit_inscription_path(@inscription) %> |
+<%= link_to 'Atras', inscriptions_path %>
+</td>
+          <br><br><br>  
+    </tbody>
+ </table>

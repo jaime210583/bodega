@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<table class="imagetable">
+    <thead>
+       <tr>
+          <th>Panes</th>
+      </tr>   
+    </thead>
+     <tbody>
+     <tr>
+     <td>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @bread.tipo %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @bread.descripcion %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @bread.precio %>
+</p>
+
+<%= link_to 'Editar', edit_bread_path(@bread) %> |
+<%= link_to 'Atras', breads_path %>
+
+</td>
+     </tr>
+   </tbody>
+ </table>

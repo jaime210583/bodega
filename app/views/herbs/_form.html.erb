@@ -1,0 +1,43 @@
+<%= form_for(@herb) do |f| %>
+  <% if @herb.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@herb.errors.count, "error") %> prohibited this herb from being saved:</h2>
+
+      <ul>
+      <% @herb.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table class="imagetable">
+    <thead>
+      <th>Agregar Hierbas</th>      
+    </thead>
+   <tbody>
+    <tr>
+          <td> 
+
+  <div class="field">
+    <%= f.label :tipo %><br>
+    <%= f.text_field :tipo %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion %><br>
+    <%= f.text_field :descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :precio %><br>
+    <%= f.text_field :precio %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Agregar'%>
+  </div>
+
+</td>
+          <br><br><br>  
+    </tbody>
+ </table>
+
+<% end %>

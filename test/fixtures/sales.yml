@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: 2015-06-17
+  fruit_id: 
+  vegetable_id: 
+  bread_id: 
+  snack_id: 
+  dairy_id: 
+  herb_id: 
+  product_id: 
+  venta_fruta: 9.99
+  venta_vegetal: 9.99
+  venta_pan: 9.99
+  venta_botana: 9.99
+  venta_lacteo: 9.99
+  venta_hierba: 9.99
+  venta_producto: 9.99
+  venta_total: 9.99
+
+two:
+  fecha: 2015-06-17
+  fruit_id: 
+  vegetable_id: 
+  bread_id: 
+  snack_id: 
+  dairy_id: 
+  herb_id: 
+  product_id: 
+  venta_fruta: 9.99
+  venta_vegetal: 9.99
+  venta_pan: 9.99
+  venta_botana: 9.99
+  venta_lacteo: 9.99
+  venta_hierba: 9.99
+  venta_producto: 9.99
+  venta_total: 9.99

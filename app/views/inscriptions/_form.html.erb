@@ -1,0 +1,49 @@
+<%= form_for(@inscription) do |f| %>
+  <% if @inscription.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inscription.errors.count, "error") %> prohibited this inscription from being saved:</h2>
+
+      <ul>
+      <% @inscription.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table class="imagetable">
+    <thead>
+      <th>Nueva Inscripción</th>      
+    </thead>
+   <tbody>
+    <tr>
+          <td> 
+
+      <div class="field">
+        <%= f.label :nombre_cliente %>
+        <%= f.text_field :nombre_cliente %><br><br>  
+      </div>
+      <div class="field">
+        <%= f.label 'curso' %>
+        <%= f.collection_select :activity_id, Activity.all, :id, :kitchen_id, prompt:true %>
+        <%= f.collection_select :id, Energy.all, :id, :descripcion, prompt:true %>
+        <%= f.collection_select :id, Kitchen.all, :id, :descripcion, prompt:true %><br><br>  
+      </div>
+      <div class="field">
+        <%= f.label :fecha %>
+        <%= f.date_select :fecha %><br><br>  
+      </div>
+      <div class="field">
+        <%= f.label :nota %>
+        <%= f.text_field :nota %><br><br>  
+      </div>
+      <div class="actions">
+        <%= f.submit 'Agregar'%>
+      </div>
+         </td>
+          <br><br><br>  
+    </tbody>
+ </table>
+
+
+<% end %>

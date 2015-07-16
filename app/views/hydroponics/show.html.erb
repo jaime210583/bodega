@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @hydroponic.fecha %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @hydroponic.descripcion %>
+</p>
+
+<p>
+  <strong>Costo:</strong>
+  <%= @hydroponic.costo %>
+</p>
+
+<p>
+  <strong>Materiales:</strong>
+  <%= @hydroponic.materiales %>
+</p>
+
+<%= link_to 'Edit', edit_hydroponic_path(@hydroponic) %> |
+<%= link_to 'Back', hydroponics_path %>

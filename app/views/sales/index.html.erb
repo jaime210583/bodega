@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Modificar Venta</h1>
+
+<table class="imagetable">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>&nbsp; Fruta</th>
+      <th>&nbsp; Verduras</th>
+      <th>&nbsp; Pan</th>
+      <th>&nbsp; Botanas</th>
+      <th>&nbsp; Lacteos</th>
+      <th>&nbsp; Hierbas</th>
+      <th>&nbsp; Otros</th>
+      <th>&nbsp; Venta fruta</th>
+      <th>&nbsp; Venta vegetal</th>
+      <th>&nbsp; Venta pan</th>
+      <th>&nbsp; Venta botana</th>
+      <th>&nbsp; Venta lacteo</th>
+      <th>&nbsp; Venta hierba</th>
+      <th>&nbsp; Venta producto</th>
+      <th>&nbsp; Venta total</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.fecha %></td>
+        <td><%= sale.fruit.tipo %></td>  <!--sale.fruit -->
+        <td><%= sale.vegetable.tipo %></td>
+        <td><%= sale.bread.tipo %></td>
+        <td><%= sale.snack.tipo %></td>
+        <td><%= sale.dairy.tipo %></td>
+        <td><%= sale.herb.tipo %></td>
+        <td><%= sale.product.tipo %></td>
+        <td><%= sale.venta_fruta %></td>
+        <td><%= sale.venta_vegetal %></td>
+        <td><%= sale.venta_pan %></td>
+        <td><%= sale.venta_botana %></td>
+        <td><%= sale.venta_lacteo %></td>
+        <td><%= sale.venta_hierba %></td>
+        <td><%= sale.venta_producto %></td>
+        <td><%= sale.venta_total = sale.venta_fruta.to_d + sale.venta_vegetal.to_d + sale.venta_pan.to_d + sale.venta_botana.to_d + sale.venta_lacteo.to_d + sale.venta_hierba.to_d + sale.venta_producto.to_d %></td>
+
+       <td>
+          <div class="btn-group" data-toggle="buttons">
+           <label class="btn btn-info">
+              <input type="radio" name="options"> <%= link_to 'Ver', sale %>
+           </label>
+        </td>
+
+        <td>
+          <div class="btn-group" data-toggle="buttons">
+           <label class="btn btn-warning">
+              <input type="radio" name="options"> <%= link_to 'Editar', edit_sale_path(sale) %>&nbsp;
+           </label>
+        </td>
+        
+        <td>
+          <div class="btn-group" data-toggle="buttons">
+           <label class="btn btn-danger">
+              <input type="radio" name="options"> <%= link_to 'Eliminar', sale, method: :delete, data: { confirm: 'Seguro desea borrar la venta?' }%>&nbsp;
+           </label>
+        </td>
+
+        
+        
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+&nbsp;<%= link_to 'Agregar Venta', new_sale_path %>
